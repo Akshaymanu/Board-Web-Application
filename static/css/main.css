@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  list-style: none;
+  text-decoration: none;
+}
+
+
+body{
+    background-color:#3e4754;
+    color: rgb(255, 255, 255);
+
+}
+.alert{
+  color: #3e4754;
+}
+
+.navbar{
+    background-color:#3e4754;
+    color: rgb(185, 219, 238);
+    
+}
+
+.sidenav{
+  background-color: #3e4754;
+  padding-left: 3ch;
+  position:absolute;
+
+}
+
+.sidenav, h4 {
+  padding: 6px 6px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+.col-6{
+  background-color: #3e4754;
+}
+.row{
+  background-color:#3e4754;
+  margin-top: 1cm;
+  height: 11cm;
+
+}
+
+.card{
+  margin-bottom: 30px;
+}
+
+.card-header{
+  background-color: rgb(69, 75, 88);
+}
+.card-body{
+  background-color: #7b8ca3;
+}
+
+.room{
+  background-color: #3e4754;
+  height: auto;
+  border: #006ba0;
+  border-radius: 5px;
+  padding: 15px 32px;
+}
+
+button{
+  padding: 10px 20px;
+  margin-bottom: 1cm;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 10%;
+
+}
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+.room-id{
+  background-color: #3e4754;
+}
+}

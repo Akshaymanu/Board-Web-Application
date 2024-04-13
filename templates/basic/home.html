@@ -1,0 +1,85 @@
+{% extends 'basic/base.html' %}
+
+
+{% block content %}
+
+<div >
+  {% for msg in messages %}
+
+  {{ msg }}
+
+{% endfor %}
+  
+    <div class="row  text-center">
+        <div class="col">
+
+
+          <div class="container">
+            <h4>Topics</h4>
+            <br><br>
+            <div class="sidenav">
+              {% for room in rooms %}
+
+              <h4>{{room.topic}}</h4>
+  
+              {% endfor %}
+            </div>
+        
+
+            
+          </div>
+          
+
+          
+
+        </div>
+        <br> <br><br> <br>
+        <div class="col-6">
+          <div class="room">
+            <a href="{% url 'create-room' %}">Create a Room</a><br>
+            <br><br>
+
+            <div class="card text-white " style="width: auto;background-color: #3e4754;">
+               
+              {% for room in rooms %}
+              
+              
+            <div class="card text-center">
+              <div class="card-header  bg-dark " style="color: rgb(255, 255, 255);">
+                <h5 class="card-title">{{room.topic.name}}</h5>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{room.topic.name}}</h5>
+                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>  -->
+                <a href="/room/{{room.id}}" class="btn btn-primary">{{room.name}}</a>
+              </div>
+              <div class="card-footer" style="background-color: #3e4754;" >
+                <span>@{{room.host.username}}</span>
+              </div>
+            </div>
+
+               
+
+              {% endfor  %}
+            </div>  
+
+            
+
+
+            
+            
+
+          </div>
+
+          <br> <br>
+        </div>
+        
+
+
+        <div class="col">
+          <h4>Recent Activity</h4>
+        </div>
+    </div>
+</div>
+  
+{% endblock content %}
