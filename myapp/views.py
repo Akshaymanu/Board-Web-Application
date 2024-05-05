@@ -76,8 +76,8 @@ def logout_user(request):
 
 
 def user_account(request):
-    profile = Profile.objects.all()
-    context = {'profile':profile}
+    rooms = Room.objects.all()
+    context = {'rooms':rooms}
     return render(request,'account/account.html',context)
 
 

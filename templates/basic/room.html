@@ -2,23 +2,28 @@
 
  {% block content%}
 
- <h1>{{room.name}}</h1>
+ <h1>{{room.topic}}</h1>
 
 <p>{{room.description}}</p>
 
 <div class="comment-wrapper">
-    <h3>conversation</h3>
+    <h3> <ul></ul>conversation</h3>
     <hr>
 
     {% for message in messages %} 
 
-    <div>
-        <h4>{{message}}</h4>
-        <small>{{message.user}} {{message.created}}  </small>
+
+    <div class="lg:w-2/4 mx-4 lg:mx-auto bg-dark p-4 rounded-xl">
+        <div class="chat-messages space-y-3 ">
+            <div class="p-3" style="background-color: grey;">
+                <p class="font-semibold" style="color: black;font-family: sans-serif;">{{message.user}},{{message.created}}  </p>
+                <p style="color: chartreuse;">{{message}}</p>
+            </div>
+        </div>
+
     </div>
 
     {% endfor %}
-
 
 
 </div>
