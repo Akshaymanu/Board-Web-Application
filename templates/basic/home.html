@@ -15,8 +15,8 @@
 
 
           <div class="container">
-            <h4>Topics</h4>
-            <br><br>
+            <h4>All</h4>
+            <br>
             <div class="sidenav">
               {% for room in rooms %}
 
@@ -36,7 +36,7 @@
         <br> <br><br> <br>
         <div class="col-6">
           <div class="room">
-            <a href="{% url 'create-room' %}">Create a Room</a><br>
+            <a href="{% url 'create-room' %}" class="btn btn-primary">Create a Room</a><br>
             <br><br>
 
             <div class="card text-white " style="width: auto;background-color: #3e4754;">
@@ -46,6 +46,7 @@
               
             <div class="card text-center">
               <div class="card-header  bg-dark " style="color: rgb(255, 255, 255);">
+                <a href="{% url 'update-room' room.id %}">Edit</a>
                 <h5 class="card-title">{{room.topic.name}}</h5>
               </div>
               <div class="card-body">

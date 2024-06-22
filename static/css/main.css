@@ -50,6 +50,15 @@ body{
 
 }
 
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
 .card{
   margin-bottom: 30px;
 }
@@ -68,6 +77,21 @@ body{
   border-radius: 5px;
   padding: 15px 32px;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 10px;
+  background-color: #3e4754;
+  padding: 10px;
+  height: auto;
+  width: auto;
+}
+
+.item8 {
+  grid-area: 1 / 2 / 5 / 6;
+}
+
 
 button{
   padding: 10px 20px;
@@ -89,3 +113,5 @@ button{
   background-color: #3e4754;
 }
 }
+
+

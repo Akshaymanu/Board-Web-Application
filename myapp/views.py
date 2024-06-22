@@ -23,7 +23,8 @@ def home_pg(request):
 #     return render(request,'basic/home.html' ,context)
 
 
- 
+
+@login_required(login_url='login')
 def room_pg(request, pk):
     room = Room.objects.get(id=pk)
     messages = room.message_set.all()
@@ -43,10 +44,22 @@ def createRoom(request):
     context = {'form': form}
     return render(request, 'basic/room_form.html', context)
 
-# def updateRoom(request, pk):
-#     room = Room.objects.get(1d=pk)
+def updateRoom(request, pk):
+    room = Room.objects.get(id=pk)
+    form = RoomForm(instance=room)
+
+    if request.method == 'POST':
+        form = RoomForm(request.POST, instance=room)
+        if form.is_valid():
+            form.save()
+        return redirect('home')
+      
+    
+    context = {'form':form}
+    return render(request, 'basic/room_form.html',context)
 
 
+@login_required(login_url='login')
 def basic(request):
     return render(request,'basic/base.html')
 
@@ -75,6 +88,7 @@ def logout_user(request):
     return redirect('login')
 
 
+@login_required(login_url='login')
 def user_account(request):
     rooms = Room.objects.all()
     context = {'rooms':rooms}
@@ -88,6 +102,7 @@ def reg_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            
 
     context = {'form': form}
     return render(request,'account/user_reg.html',context)
