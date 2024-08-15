@@ -12,12 +12,12 @@
 
     
 
-    {% for message in messages %} 
+    {% for message in room_messages %} 
 
 
     <div class="lg:w-2/4 mx-4 lg:mx-auto bg-dark p-4 rounded-xl">
 
-        <p class="font-semibold" style="color: rgb(255, 255, 255);font-family: sans-serif;">{{message.user}},{{message.created}}  </p>
+        <p class="font-semibold" style="color: rgb(255, 255, 255);font-family: sans-serif;"><small>{{message.user}}</small>&nbsp;&nbsp;{{message.created|timesince}}&nbsp;ago </p>
         <p style="color: chartreuse;">{{message}}</p>
 
     </div>
@@ -26,13 +26,14 @@
     <br>
     <div class="container">
         <div class="row">
-            <!-- <div class="col-25">
-                <label for="Message">Message</label>
-            </div> -->
-            <div class="col-75">
-                <input type="text" name="" id="" placeholder="Type Here..">
-                <br><br><input type="button" class="btn btn-primary" value="Send">
+            <div class="message-form">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="body" id="" placeholder="Type Yor Message Here...">
+
+                </form>
             </div>
+
         </div>
     </div>
 

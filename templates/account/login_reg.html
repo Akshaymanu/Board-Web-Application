@@ -1,0 +1,61 @@
+{% extends 'basic/base.html' %}
+
+
+{% block content %}
+        <style>
+
+        .card {
+          margin: 0 auto; /* Added */
+          float: none; /* Added */
+          margin-top: 30px;
+                
+        }
+
+        body{
+          background-color:#3e4754;
+
+        }
+        </style>
+          {% if page == 'login' %}
+        <div class="card text-bg-secondary  mb-6" style="max-width: 18rem;">
+          <div class="card-header">Login</div>
+            <div class="card-body">
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                      <input type="text" class="form-control" name="username" placeholder="Enter Your Username...">
+                    </div>
+                    <div class="mb-3">
+                      <input type="password" class="form-control" name="password" placeholder="Enter Password..">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-secondary">Login</button>            
+                    <div><a href="{% url 'register' %}">Sign Up</a><p>If You are new here</p></div>
+                  </form>
+            </div>
+          </div>
+        </div>
+
+          {% else %}
+        <div class="card text-bg-secondary  mb-6" style="max-width: 18rem;">
+          <div class="card-header">Register</div>
+            <div class="card-body">
+                <form method="post" action="#">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-secondary">Sign Up</button> 
+                    <div><p>Already Signed Up</p><a href="{% url 'login' %}">Login</a></div>
+                  </form>
+            </div>
+          </div>
+        </div>
+
+        {% endif %}
+
+
+
+{% endblock content %}
+
+
+
+</div>

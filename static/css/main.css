@@ -33,6 +33,7 @@ body{
 
 }
 
+
 .sidenav, h4 {
   padding: 6px 6px 20px;
   text-decoration: none;
@@ -84,12 +85,15 @@ input[type=text], select, textarea {
   gap: 10px;
   background-color: #3e4754;
   padding: 10px;
-  height: auto;
-  width: auto;
-}
 
-.item8 {
-  grid-area: 1 / 2 / 5 / 6;
+}
+.items{
+    
+  border-radius: 8px;
+  padding:1em 1.5em .5em 1.4em;
+  box-shadow: 0px 0px 17px 0px black;
+  margin:5% 1em 2em .5em;
+  width:100%;
 }
 
 

@@ -36,7 +36,7 @@
           {% if user.is_authenticated %}
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account' %}">{{request.user}}</a>
+            <a class="nav-link" href="#">{{request.user}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -53,9 +53,22 @@
 
 
         </ul>
+
+
       </div>
     </div>
   </nav>
+
+          
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+  
     
   {% block content %}
 
